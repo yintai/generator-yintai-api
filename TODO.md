@@ -1,0 +1,2 @@
+- [ ] Testing code
+- [ ] A directory method supports copyTpl

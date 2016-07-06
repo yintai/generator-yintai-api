@@ -1,0 +1,42 @@
+buildscript {
+    repositories {
+        mavenLocal()
+        <% if( extraMavenRepo!='' ) {%>maven { url '<%=extraMavenRepo%>' }<%}%>
+        mavenCentral()
+    }
+}
+
+
+group '<%=organizationName%>'
+
+apply plugin: 'groovy'
+apply plugin: 'eclipse'
+apply plugin: 'idea'
+
+sourceCompatibility = 1.8
+targetCompatibility = 1.8
+
+[compileJava, compileTestJava, compileGroovy, compileTestGroovy]*.options*.encoding = 'UTF-8'
+
+repositories {
+    mavenLocal()
+    <% if( extraMavenRepo!='' ) {%>maven { url '<%=extraMavenRepo%>' }<%}%>
+    mavenCentral()
+}
+
+dependencies {
+    compile 'org.codehaus.groovy:groovy-all:2.4.6'
+    compile('org.nofdev:service-core:1.0.3')
+    testCompile 'org.spockframework:spock-core:1.0-groovy-2.4'
+}
+
+eclipse {
+    classpath {
+        containers.remove('org.eclipse.jdt.launching.JRE_CONTAINER')
+        containers 'org.eclipse.jdt.launching.JRE_CONTAINER/org.eclipse.jdt.internal.debug.ui.launcher.StandardVMType/JavaSE-1.8'
+    }
+}
+
+task wrapper(type: Wrapper) {
+    gradleVersion = '2.7'
+}
