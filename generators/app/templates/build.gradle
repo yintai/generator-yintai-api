@@ -13,6 +13,10 @@ apply plugin: 'groovy'
 apply plugin: 'eclipse'
 apply plugin: 'idea'
 
+jar {
+    baseName = '<%= baseName %>'
+}
+
 sourceCompatibility = 1.8
 targetCompatibility = 1.8
 
