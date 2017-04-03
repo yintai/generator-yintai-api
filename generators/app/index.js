@@ -15,14 +15,8 @@ var APIGenerator = module.exports = yeoman.generators.Base.extend({
         var done = this.async();
 
         // Have Yeoman greet the user.
-        var logo = "  _   _       ______ _____             \n" +
-            " | \\ | |     |  ____|  __ \\            \n" +
-            " |  \\| | ___ | |__  | |  | | _____   __\n" +
-            " | . ` |/ _ \\|  __| | |  | |/ _ \\ \\ / /\n" +
-            " | |\\  | (_) | |    | |__| |  __/\\ V / \n" +
-            " |_| \\_|\\___/|_|    |_____/ \\___| \\_/  \n" +
-            "                                       \n";
-        this.log(chalk.green(logo) + 'Welcome to the supreme ' + chalk.red('generator-yintai-springboot') + ' generator!' + '\n' + chalk.yellow('Usually the default prompt is recommended. '));
+        var logo = "";
+        this.log(chalk.green(logo) + 'Welcome to the supreme ' + chalk.red('generator-yintai-api') + ' generator!' + '\n' + chalk.yellow('Usually the default prompt is recommended. '));
 
         var prompts = [
             {
@@ -34,7 +28,7 @@ var APIGenerator = module.exports = yeoman.generators.Base.extend({
             {
                 type: 'string',
                 name: 'extraMavenRepo',
-                message: '(2/11) What private maven repository would you like to use? (eg. http://nexus.yintai.org:8081/nexus/content/groups/public/)'
+                message: '(2/11) What private maven repository would you like to use? (eg. http://mvnrepo.alibaba-inc.com/mvn/repository)'
             },
             {
                 type: 'string',
